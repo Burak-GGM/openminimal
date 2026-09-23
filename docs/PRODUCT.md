@@ -81,7 +81,7 @@ Source license: GPL-3.0-only, selected by the owner for the public beta.
    Obsidian file access, accessibility and performance hardening with measured baselines.
 3. Third-party applet API and sandbox; block builder; community presets/applets.
 
-Record implemented behavior and remaining work in README; this document is intent,
+Record implemented behavior and remaining work in [DEVELOPMENT.md](DEVELOPMENT.md); this document is intent,
 not a claim that all features already work.
 
 ## Drawer and customization refinements — 2026-09-09

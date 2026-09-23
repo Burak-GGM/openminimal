@@ -1,6 +1,6 @@
 # Open&minimal
 
-Work in this directory. Product decisions are recorded in docs/PRODUCT.md.
+Work in this directory. Product decisions are recorded in docs/PRODUCT.md; detailed development notes are in docs/DEVELOPMENT.md.
 
 - Native Android: Kotlin, Jetpack Compose; application ID org.openminimal.launcher.
 - All user-visible strings must have English and Turkish resources. Avoid hardcoded UI copy.

@@ -122,6 +122,6 @@ Paths below are relative to `app/src/main/java/org/openminimal/launcher/` unless
 | Focus Gate | `model/FocusGate.kt`, `data/FocusRuleCodec.kt`, `ui/DailyLimits.kt`, `FocusGateActivity.kt`, `FocusGuardService.kt`, `platform/FocusGateContract.kt` |
 | Localization | `app/src/main/res/values{,-tr}/personalization.xml` and `strings.xml` |
 | Tests | `PersonalizationTest`, `HomeLayoutTest`, adapted config/slots tests; `LauncherInteractionTest`, `PlatformIntegrationTest` |
-| Version/docs | `app/build.gradle.kts`, `README.md`, `AGENTS.md`, `docs/{PRODUCT,ARCHITECTURE,PERSONALIZATION,VALIDATION}.md` |
+| Version/docs | `app/build.gradle.kts`, `README.md`, `docs/DEVELOPMENT.md`, `AGENTS.md`, `docs/{PRODUCT,ARCHITECTURE,PERSONALIZATION,VALIDATION}.md` |
 
 This is a logical change inventory, not a Git diff.
