@@ -1,0 +1,74 @@
+name: Signed beta release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing beta tag at the selected commit (for example v0.3.0-beta.1)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: startsWith(inputs.tag, 'v')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment: release
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Verify the beta tag matches this commit
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          git show-ref --verify --quiet "refs/tags/$RELEASE_TAG"
+          test "$(git rev-list -n 1 "$RELEASE_TAG")" = "$GITHUB_SHA"
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v4
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-provider: basic
+      - name: Install Android SDK 36
+        run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+      - name: Decode release keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.OPENMINIMAL_RELEASE_KEYSTORE_BASE64 }}
+          OPENMINIMAL_RELEASE_STORE_PASSWORD: ${{ secrets.OPENMINIMAL_RELEASE_STORE_PASSWORD }}
+          OPENMINIMAL_RELEASE_KEY_ALIAS: ${{ secrets.OPENMINIMAL_RELEASE_KEY_ALIAS }}
+          OPENMINIMAL_RELEASE_KEY_PASSWORD: ${{ secrets.OPENMINIMAL_RELEASE_KEY_PASSWORD }}
+        run: |
+          test -n "$KEYSTORE_BASE64"
+          test -n "$OPENMINIMAL_RELEASE_STORE_PASSWORD"
+          test -n "$OPENMINIMAL_RELEASE_KEY_ALIAS"
+          test -n "$OPENMINIMAL_RELEASE_KEY_PASSWORD"
+          printf '%s' "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/openminimal-release.jks"
+          chmod 600 "$RUNNER_TEMP/openminimal-release.jks"
+          echo "OPENMINIMAL_RELEASE_STORE_FILE=$RUNNER_TEMP/openminimal-release.jks" >> "$GITHUB_ENV"
+      - name: Verify and build signed release
+        env:
+          OPENMINIMAL_RELEASE_STORE_PASSWORD: ${{ secrets.OPENMINIMAL_RELEASE_STORE_PASSWORD }}
+          OPENMINIMAL_RELEASE_KEY_ALIAS: ${{ secrets.OPENMINIMAL_RELEASE_KEY_ALIAS }}
+          OPENMINIMAL_RELEASE_KEY_PASSWORD: ${{ secrets.OPENMINIMAL_RELEASE_KEY_PASSWORD }}
+        run: ./gradlew :app:testDebugUnitTest :app:lintDebug :app:assembleRelease :app:bundleRelease --no-daemon
+      - name: Verify APK signing and checksums
+        run: |
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose app/build/outputs/apk/release/app-release.apk
+          sha256sum app/build/outputs/apk/release/app-release.apk app/build/outputs/bundle/release/app-release.aab > SHA256SUMS.txt
+      - name: Publish prerelease assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          gh release create "$RELEASE_TAG" \
+            app/build/outputs/apk/release/app-release.apk#OpenMinimal-$RELEASE_TAG.apk \
+            app/build/outputs/bundle/release/app-release.aab#OpenMinimal-$RELEASE_TAG.aab \
+            SHA256SUMS.txt \
+            --verify-tag --prerelease --title "Open&minimal $RELEASE_TAG" \
+            --notes 'Public beta. Install the APK directly; the AAB is for store submission.'

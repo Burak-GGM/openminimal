@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.OpenMinimal" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">#F5F3EE</item>
+        <item name="android:colorAccent">#526A55</item>
+    </style>
+</resources>

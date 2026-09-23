@@ -1,0 +1,17 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="fixture_action" android:enabled="true" android:icon="@drawable/fixture_icon" android:shortcutShortLabel="@string/fixture_shortcut">
+        <intent android:action="android.intent.action.VIEW" android:targetPackage="org.openminimal.launcher.test" android:targetClass="org.openminimal.launcher.FixtureIconActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="fixture_action2" android:enabled="true" android:icon="@drawable/fixture_icon" android:shortcutShortLabel="@string/fixture_shortcut2">
+        <intent android:action="android.intent.action.VIEW" android:targetPackage="org.openminimal.launcher.test" android:targetClass="org.openminimal.launcher.FixtureIconActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="fixture_action3" android:enabled="true" android:icon="@drawable/fixture_icon" android:shortcutShortLabel="@string/fixture_shortcut3">
+        <intent android:action="android.intent.action.VIEW" android:targetPackage="org.openminimal.launcher.test" android:targetClass="org.openminimal.launcher.FixtureIconActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="fixture_action4" android:enabled="true" android:icon="@drawable/fixture_icon" android:shortcutShortLabel="@string/fixture_shortcut4">
+        <intent android:action="android.intent.action.VIEW" android:targetPackage="org.openminimal.launcher.test" android:targetClass="org.openminimal.launcher.FixtureIconActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="fixture_action5" android:enabled="true" android:icon="@drawable/fixture_icon" android:shortcutShortLabel="@string/fixture_shortcut5">
+        <intent android:action="android.intent.action.VIEW" android:targetPackage="org.openminimal.launcher.test" android:targetClass="org.openminimal.launcher.FixtureIconActivity" />
+    </shortcut>
+</shortcuts>
