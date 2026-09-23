@@ -25,6 +25,7 @@ jobs:
         env:
           RELEASE_TAG: ${{ inputs.tag }}
         run: |
+          test -s LICENSE
           git show-ref --verify --quiet "refs/tags/$RELEASE_TAG"
           test "$(git rev-list -n 1 "$RELEASE_TAG")" = "$GITHUB_SHA"
       - uses: actions/setup-java@v6

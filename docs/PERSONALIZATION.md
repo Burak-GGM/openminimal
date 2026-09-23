@@ -93,8 +93,8 @@ device limitations are in [VALIDATION.md](VALIDATION.md).
 
 ### Next session entry point
 
-1. Read AGENTS.md, ARCHITECTURE.md and VALIDATION.md, inspect current files and rerun the normal
-   build script. There are no baseline Git commits; do not assume untracked files are disposable.
+1. Read AGENTS.md, ARCHITECTURE.md, BETA_RELEASE.md and VALIDATION.md, inspect current files and rerun the normal
+   build script. Preserve local state and do not assume untracked files are disposable.
 2. Validate Live Focus Guard and budget-expiry timing on additional OEM/API versions, including
    screen-off/unlock, recents, notifications and multi-window. Extend `FocusGuardIntegrationTest`,
    which keeps accessibility services active during instrumentation and verifies live budget expiry.
@@ -124,4 +124,4 @@ Paths below are relative to `app/src/main/java/org/openminimal/launcher/` unless
 | Tests | `PersonalizationTest`, `HomeLayoutTest`, adapted config/slots tests; `LauncherInteractionTest`, `PlatformIntegrationTest` |
 | Version/docs | `app/build.gradle.kts`, `README.md`, `AGENTS.md`, `docs/{PRODUCT,ARCHITECTURE,PERSONALIZATION,VALIDATION}.md` |
 
-This is a logical change inventory, not a Git diff: the repository currently has no committed baseline.
+This is a logical change inventory, not a Git diff.

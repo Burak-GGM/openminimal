@@ -1,6 +1,15 @@
-# Validation — 0.3.0-dev — 2026-09-23
+# Validation — 0.3.0-beta.1 candidate — 2026-09-23
 
 ## Build and automated tests
+
+Beta preparation: local debug unit tests and lint passed; release APK/AAB assembly with
+resource shrinking and R8 passed without signing credentials. The emulator ran **41/41**
+instrumentation tests successfully on 2026-09-23 after the first in-app privacy dialog
+change. A final policy-link and dialog-scroll adjustment was subsequently compiled in
+the normal debug build and installed/launched on the same emulator. Initial public
+[GitHub CI](https://github.com/Burak-GGM/openminimal/actions/runs/35865504211) succeeded,
+including JVM tests, lint, debug APK and release APK/AAB assembly. The unsigned release
+APK is not installable.
 
 - Debug assembly, JVM tests and lint succeeded through `bash scripts/build-and-run.sh`.
   Package `org.openminimal.launcher`, versionCode **12**, versionName **0.3.0-beta.1**.
@@ -10,7 +19,7 @@
   minimum grid columns and sparse overflow projection.
 - Lint: **0 errors, 18 warnings**. Remaining warnings concern dependency versions, API-33 locale
   metadata, the API-31 accessibility-tool declaration, dynamic external icon resource lookup and
-  optional KTX idioms. No new dependencies or INTERNET permission were added. English/Turkish each have **381** resource keys, matching
+  optional KTX idioms. No new dependencies or INTERNET permission were added. English/Turkish each have **384** resource keys, matching
   without duplicates.
 - Before the last lifecycle refinements, full instrumentation passed **40/40** (2 minutes 34 seconds).
   The final expanded run passed **40/41**, with one Compose-idle timeout in the existing icon-folder
@@ -67,7 +76,7 @@
 
 ## Device and visual review
 
-The final 0.3.0-dev APK installed over existing data and launched on the reused Pixel_9a emulator.
+The 0.3.0-beta.1 candidate debug APK installed over existing data and launched on the reused Pixel_9a emulator.
 The Nothing Phone (2) was not connected via ADB during the final build, so this version was not
 deployed to the physical phone. APK: `app/build/outputs/apk/debug/app-debug.apk`.
 No low-end performance conclusion follows from this emulator or the Nothing Phone (2).

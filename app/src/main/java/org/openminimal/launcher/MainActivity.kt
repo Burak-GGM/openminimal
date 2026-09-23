@@ -133,6 +133,10 @@ class MainActivity : ComponentActivity() {
     }
     fun requestUsage() = safeStart(Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS).setData(Uri.parse("package:$packageName")))
     fun openAccessibilitySettings() = safeStart(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+    fun openPrivacyPolicy(language: String) {
+        val document = if (language == "tr") "PRIVACY.tr.md" else "PRIVACY.md"
+        safeStart(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Burak-GGM/openminimal/blob/main/docs/$document")))
+    }
     fun openObsidian(note: String) {
         val uri = if (note.isBlank()) Uri.parse("obsidian://open") else Uri.Builder()
             .scheme("obsidian").authority("new").appendQueryParameter("content", note).build()

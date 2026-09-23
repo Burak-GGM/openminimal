@@ -1,0 +1,40 @@
+name: Beta bug report / Beta hata bildirimi
+description: Report a launcher problem without sharing private notes or app activity.
+title: "[Beta] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for testing. Please remove personal notes, tasks, package activity and tokens from screenshots or logs. / Test ettiğiniz için teşekkürler. Ekran görüntülerinden ve kayıtlardan kişisel notları, görevleri, uygulama etkinliğini ve anahtarları çıkarın."
+  - type: input
+    id: version
+    attributes:
+      label: App version / Uygulama sürümü
+      placeholder: 0.3.0-beta.1
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and Android version / Cihaz ve Android sürümü
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / Tekrarlama adımları
+      description: Include relevant launcher settings and whether Open&minimal is the default home app.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / Beklenen davranış
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior / Gerçekleşen davranış
+    validations:
+      required: true

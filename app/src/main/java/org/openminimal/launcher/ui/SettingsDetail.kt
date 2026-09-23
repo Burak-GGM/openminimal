@@ -7,6 +7,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -89,11 +90,13 @@ import org.openminimal.launcher.platform.UsageSnapshot
                     MutedText(stringResource(R.string.network_prototype))
                     if (usage.checked && !usage.granted) OutlinedButton(onClick = activity::requestUsage) { Text(stringResource(R.string.grant_usage)) }
                     OutlinedButton(onClick = { showPolicy = true }) { Text(stringResource(R.string.privacy_policy)) }
+                    val policyLanguage = LocalConfiguration.current.locales[0].language
                     if (showPolicy) AlertDialog(
                         onDismissRequest = { showPolicy = false },
                         title = { Text(stringResource(R.string.privacy_policy)) },
-                        text = { Text(stringResource(R.string.privacy_policy_summary)) },
+                        text = { Text(stringResource(R.string.privacy_policy_summary), Modifier.heightIn(max = 400.dp).verticalScroll(rememberScrollState())) },
                         confirmButton = { TextButton(onClick = { showPolicy = false }) { Text(stringResource(R.string.close)) } },
+                        dismissButton = { TextButton(onClick = { showPolicy = false; activity.openPrivacyPolicy(policyLanguage) }) { Text(stringResource(R.string.full_privacy_policy)) } },
                     )
                 }
                 SettingsSection.USAGE -> {

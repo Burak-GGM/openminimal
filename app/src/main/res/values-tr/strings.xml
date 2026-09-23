@@ -88,6 +88,7 @@
     <string name="default_launcher">Varsayılan launcher yap</string>
     <string name="privacy">Gizlilik</string>
     <string name="privacy_policy">Gizlilik politikası</string>
+    <string name="full_privacy_policy">Tam politika</string>
     <string name="privacy_policy_summary">Open&amp;minimal ayarları, notları, görevleri, klasörleri ve Odak Geçidi kurallarını bu cihazda saklar. Hesap, analiz, reklam veya internet izni yoktur; bu veriler bize gönderilmez. İzin verilirse Android Kullanım Erişimi, ekran süresi özeti ve sınırları için uygulama etkinliğini cihaz üzerinde sağlar. İsteğe bağlı erişilebilirlik hizmeti, Odak Geçidi’ni göstermek için öndeki uygulamayı izler; ekran içeriğini okumaz. Launcher’dan açılan uygulamalar ve Android widget’ları kendi gizlilik politikalarına tabidir. Uygulama yedeklemesi kapalıdır. Yerel verileri Android uygulama depolama ayarlarından veya uygulamayı kaldırarak silebilirsin. Tam İngilizce ve Türkçe politikalar proje deposundadır.</string>
     <string name="prototype_scope">Board yerleşimi düzenleme, preset paylaşımı ve community içerikleri sonraki adımlarda eklenecek.</string>
     <string name="action_unavailable">İşlem açılamadı. Gerekli uygulamanın yüklü olduğunu kontrol et.</string>

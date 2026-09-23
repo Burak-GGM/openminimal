@@ -192,7 +192,8 @@ respective licenses.
 ## GitHub builds and beta releases
 
 Every push and pull request runs unit tests, Android lint, and debug/release APK and AAB
-builds. The CI debug APK is a temporary testing artifact, not a signed public release.
+builds. CI uploads a debug APK and unsigned release build artifacts for review. These
+temporary artifacts are not signed public releases.
 The release build remains unsigned unless all four `OPENMINIMAL_RELEASE_*` signing
 environment variables are supplied. A stable private signing key is required before
 publishing an installable release. Never commit a keystore or its passwords.
