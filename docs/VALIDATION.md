@@ -11,6 +11,13 @@ the normal debug build and installed/launched on the same emulator. Initial publ
 including JVM tests, lint, debug APK and release APK/AAB assembly. The unsigned release
 APK is not installable.
 
+For the signed release candidate, the 4096-bit RSA certificate SHA-256 is
+`37:E8:A4:54:0F:C5:DD:2F:43:79:1A:81:78:BB:57:C8:2E:0D:6F:09:E0:FA:2A:02:55:4D:21:C7:CE:75:31:6D`.
+`apksigner verify` passed; `jarsigner -verify` accepted the AAB (with self-signed
+certificate warnings), and bundletool 1.18.3 validated its structure. The signed APK
+installed, launched without AndroidRuntime errors and reinstalled on a separate clean
+Android 16 AVD. No debug install or owner phone data was cleared.
+
 - Debug assembly, JVM tests and lint succeeded through `bash scripts/build-and-run.sh`.
   Package `org.openminimal.launcher`, versionCode **12**, versionName **0.3.0-beta.1**.
 - **38 JVM tests passed**, zero failures/errors. Existing personalization tests cover schema 8 migration into
@@ -19,7 +26,7 @@ APK is not installable.
   minimum grid columns and sparse overflow projection.
 - Lint: **0 errors, 18 warnings**. Remaining warnings concern dependency versions, API-33 locale
   metadata, the API-31 accessibility-tool declaration, dynamic external icon resource lookup and
-  optional KTX idioms. No new dependencies or INTERNET permission were added. English/Turkish each have **384** resource keys, matching
+  optional KTX idioms. No new dependencies or INTERNET permission were added. English/Turkish each have **387** resource keys, matching
   without duplicates.
 - Before the last lifecycle refinements, full instrumentation passed **40/40** (2 minutes 34 seconds).
   The final expanded run passed **40/41**, with one Compose-idle timeout in the existing icon-folder

@@ -184,10 +184,8 @@ Product decisions: [docs/PRODUCT.md](docs/PRODUCT.md).
 
 ## Source license
 
-The project is intended to be open source. The owner has not yet chosen a source
-license; select one before F-Droid submission or distributing a public beta binary. Until then,
-this public source snapshot does not grant a reuse license. Third-party dependencies retain their
-respective licenses.
+Open&minimal is licensed under [GNU GPL v3.0 only](LICENSE) (`GPL-3.0-only`).
+Third-party dependencies retain their respective licenses.
 
 ## GitHub builds and beta releases
 
@@ -198,7 +196,7 @@ The release build remains unsigned unless all four `OPENMINIMAL_RELEASE_*` signi
 environment variables are supplied. A stable private signing key is required before
 publishing an installable release. Never commit a keystore or its passwords.
 
-After a source license and signing strategy are chosen, configure the `release`
+Configure the `release`
 GitHub environment with `OPENMINIMAL_RELEASE_KEYSTORE_BASE64`,
 `OPENMINIMAL_RELEASE_STORE_PASSWORD`, `OPENMINIMAL_RELEASE_KEY_ALIAS` and
 `OPENMINIMAL_RELEASE_KEY_PASSWORD` secrets. Create a `v`-prefixed tag at the desired

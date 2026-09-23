@@ -25,7 +25,7 @@
     <string name="gesture_keywords">swipe animation haptic feedback bottom bar navigation button</string>
     <string name="preset_keywords">preset custom save rename delete style</string>
     <string name="general_keywords">default launcher language english turkish</string>
-    <string name="privacy_keywords">offline online privacy permissions usage access</string>
+    <string name="privacy_keywords">offline online privacy permissions usage access source license GPL</string>
     <string name="usage_keywords">screen time daily budget limit focus gate friction challenge wait math memory usage access</string>
     <string name="search_settings">Search settings</string>
     <string name="clear_search">Clear search</string>

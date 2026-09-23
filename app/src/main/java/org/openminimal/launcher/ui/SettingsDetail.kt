@@ -85,6 +85,7 @@ import org.openminimal.launcher.platform.UsageSnapshot
                 }
                 SettingsSection.PRIVACY -> {
                     var showPolicy by remember { mutableStateOf(false) }
+                    var showLicense by remember { mutableStateOf(false) }
                     Choice(stringResource(R.string.offline), stringResource(R.string.offline_body), !c.onlinePreference) { model.configure { it.copy(onlinePreference = false) } }
                     Choice(stringResource(R.string.online), stringResource(R.string.online_body), c.onlinePreference) { model.configure { it.copy(onlinePreference = true) } }
                     MutedText(stringResource(R.string.network_prototype))
@@ -97,6 +98,14 @@ import org.openminimal.launcher.platform.UsageSnapshot
                         text = { Text(stringResource(R.string.privacy_policy_summary), Modifier.heightIn(max = 400.dp).verticalScroll(rememberScrollState())) },
                         confirmButton = { TextButton(onClick = { showPolicy = false }) { Text(stringResource(R.string.close)) } },
                         dismissButton = { TextButton(onClick = { showPolicy = false; activity.openPrivacyPolicy(policyLanguage) }) { Text(stringResource(R.string.full_privacy_policy)) } },
+                    )
+                    OutlinedButton(onClick = { showLicense = true }) { Text(stringResource(R.string.source_license)) }
+                    if (showLicense) AlertDialog(
+                        onDismissRequest = { showLicense = false },
+                        title = { Text(stringResource(R.string.source_license)) },
+                        text = { Text(stringResource(R.string.source_license_summary)) },
+                        confirmButton = { TextButton(onClick = { showLicense = false }) { Text(stringResource(R.string.close)) } },
+                        dismissButton = { TextButton(onClick = { showLicense = false; activity.openSourceLicense() }) { Text(stringResource(R.string.view_source_license)) } },
                     )
                 }
                 SettingsSection.USAGE -> {

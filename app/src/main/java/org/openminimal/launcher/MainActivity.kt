@@ -137,6 +137,8 @@ class MainActivity : ComponentActivity() {
         val document = if (language == "tr") "PRIVACY.tr.md" else "PRIVACY.md"
         safeStart(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Burak-GGM/openminimal/blob/main/docs/$document")))
     }
+    fun openSourceLicense() = safeStart(Intent(Intent.ACTION_VIEW,
+        Uri.parse("https://github.com/Burak-GGM/openminimal/blob/main/LICENSE")))
     fun openObsidian(note: String) {
         val uri = if (note.isBlank()) Uri.parse("obsidian://open") else Uri.Builder()
             .scheme("obsidian").authority("new").appendQueryParameter("content", note).build()

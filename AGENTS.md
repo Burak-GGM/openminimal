@@ -14,4 +14,4 @@ Work in this directory. Product decisions are recorded in docs/PRODUCT.md.
 - Configuration schema/migrations and preset boundaries are documented in docs/ARCHITECTURE.md. Use canonical typed Home/Drawer models; never restore a shared writable layout flag.
 - Live previews must reuse Home/Drawer visual renderers. Register new settings in SettingsCatalog with English/Turkish search terms. Preserve snapshot exclusions for privacy, content and device consent.
 - Track completed and deferred personalization work in docs/PERSONALIZATION.md and actual checks in docs/VALIDATION.md. The alternative B&W icon algorithm requires the owner's approval.
-- Do not publish, push, or select a source license without discussion. The intent is open source; license selection is pending.
+- The source license is GPL-3.0-only; keep the LICENSE and README notice intact. Do not publish or push without the owner's authorization.

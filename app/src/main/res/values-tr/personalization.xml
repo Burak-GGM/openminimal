@@ -25,7 +25,7 @@
     <string name="gesture_keywords">kaydırma animasyon titreşim geri bildirim alt çubuk gezinme düğme</string>
     <string name="preset_keywords">hazır ayar preset özel kaydet yeniden adlandır sil stil</string>
     <string name="general_keywords">varsayılan launcher dil ingilizce türkçe</string>
-    <string name="privacy_keywords">çevrimdışı çevrimiçi gizlilik izinler kullanım erişimi</string>
+    <string name="privacy_keywords">çevrimdışı çevrimiçi gizlilik izinler kullanım erişimi kaynak lisans GPL</string>
     <string name="usage_keywords">ekran süresi günlük bütçe limit sınır odak kapısı zorlaştırma bekleme matematik hafıza kullanım erişimi</string>
     <string name="search_settings">Ayarlarda ara</string>
     <string name="clear_search">Aramayı temizle</string>

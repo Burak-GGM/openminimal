@@ -55,7 +55,7 @@ Kotlin + Compose, EN/TR from day one. Initial engineering baseline Android 8/API
 this is provisional pending compatibility tests. Compile/target API 36 for prototype.
 Nothing Phone (2) is the physical test device. After successful APK builds install and
 open on that authorized device if connected. Low-end hardware still needs validation.
-Open-source intent; license to be selected by owner before public beta binary distribution.
+Source license: GPL-3.0-only, selected by the owner for the public beta.
 
 ## Interaction refinements agreed on 2026-09-09
 

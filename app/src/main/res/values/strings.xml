@@ -89,6 +89,9 @@
     <string name="privacy">Privacy</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="full_privacy_policy">Full policy</string>
+    <string name="source_license">Source code and license</string>
+    <string name="source_license_summary">Open&amp;minimal is free software licensed under GNU GPL v3.0 only. You can use, study, share and modify its source under that license. It comes without warranty. The complete license and source code are available in the project repository.</string>
+    <string name="view_source_license">View license</string>
     <string name="privacy_policy_summary">Open&amp;minimal stores settings, notes, tasks, folders and Focus Gate rules on this device. It has no account, analytics, ads or Internet permission and does not send this data to us. Android Usage Access, if enabled, provides app activity for on-device screen-time summaries and limits. The optional accessibility service observes the foreground app to show a Focus Gate; it does not read screen content. Android widgets and apps opened from the launcher follow their own privacy policies. App backup is disabled. You can remove local data through Android app storage settings or by uninstalling. The full English and Turkish policies are included in the project repository.</string>
     <string name="prototype_scope">Board layout editing, preset sharing and community content are coming in later iterations.</string>
     <string name="action_unavailable">Could not open this action. Check that the required app is installed.</string>
